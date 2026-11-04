@@ -183,7 +183,7 @@ sorted(gourp,key=group.get,reverse=True)中group.get根据每个 key 获取对�
 
 删除链表中的倒数第k个节点---展开成数组，然后去掉要删除的那个元素，再重新建立链表即可
 
-两两交换链表的节点---新建一个列表，然后画图去做，两两存在才可以交换,cur.next and cur.next.next  通过赋值去构建出要求的链表
+两两交换链表的节点---新建一个链表，然后画图去做，两两存在才可以交换,cur.next and cur.next.next  通过赋值去构建出要求的链表
 
 ## 二叉树
 

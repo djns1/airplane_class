@@ -213,7 +213,7 @@ sorted(gourp,key=group.get,reverse=True)中group.get根据每个 key 获取对�
 
 二叉树的中序+后序---后序的最后一个postorder(-1)是根节点，跟上述一样要从中序获取index，中序和后序的左侧是一样的，右侧后序要去掉最后一个元素(right--[index:-1])，也是记住带进去的数组元素个数中序和后序是一致的
 
-二叉树的路径之和---写一个check去计算当前所有的路径之和，然后用dfs去遍历每个子节点，直径和最大路径是可以直接返回的，故不需要dfs去做了
+二叉树的路径之和---写一个check去计算当前所有的路径之和，def(root,total)用total+=root.val去更新计算出来的数值,check(root.left,total)右侧同理，然后用dfs去遍历每个子节点，直径和最大路径是可以直接返回的，故不需要dfs去做了
 
 二叉树的最大路径---跟直径的思路差不多，但是total = left+right+root.val并且return是root.val+max(left,right)，直径是return 1+max(left,right) 还有一个点就是这个二叉树是可以断的所以left = max(get_total(root,left),0)右边同理，而直径都是正数不需要考虑这个
 

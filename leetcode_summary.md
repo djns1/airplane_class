@@ -193,7 +193,7 @@ sorted(gourp,key=group.get,reverse=True)中group.get根据每个 key 获取对�
 
 翻转二叉树---直接交换顺序，if not root return None
 
-对称二叉树---需要写一个辅助函数same(p,q),当not q and not p时返回的是true 数值不等于以及两个谁先没有都返回false
+对称二叉树---需要写一个辅助函数same(p,q),当not q and not p时返回的是true **数值(p.val和q.val)不等于**以及两个谁先没有都返回false 最后return same(p.left,q.right) and same(p.right,q.left)
 
 二叉树的直径---直径等于左右深度，写一个全局变量self.diameter然后跟每次计算的深度和求最大
 

@@ -199,7 +199,7 @@ sorted(gourp,key=group.get,reverse=True)中group.get根据每个 key 获取对�
 
 二叉树的层序遍历---写一个dfs(node,depath)带有深度的前序遍历函数，当result的长度和depath一样的时候就加[]然后加元素(在result[depath]加)
 
-将升序数组转为二叉搜索树---左子树所有节点小于根节点，右子树所有节点大于根节点。其实也就是根据前序遍历去做，加入的数值是TreeNode(nums[mid])
+将升序数组转为二叉搜索树---左子树所有节点小于根节点，右子树所有节点大于根节点。其实也就是根据前序遍历去做build_tree(left,right)，加入的数值是root=TreeNode(nums[mid]) 然后root.left=built_tree(left,mid-1)右侧同理
 
 验证二叉搜索树---用前序遍历的思想把数据都取出来，然后要注意去重，二叉搜索树是严格递增sorted(set(nums))
 

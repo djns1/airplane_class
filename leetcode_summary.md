@@ -66,7 +66,7 @@ prerequisitesd的子数组只会有两个,根据prerequisitesd得到邻表(学�
 用remain和origin的思想去做(保留和剔除)，for i in range(len(origin))这个循环,同时里面也是有一层dfs的,列表相加是[],剔除的时候是[:i] + [i+1:]
 
 **子集**
-每次都要从result和nums去抽取元素,所以会有两重循环,new_nums.append([i],j),然后result+=new_nums
+每次都要从result和nums去抽取元素,所以会有两重循环,new_nums.append([i]+j),然后result+=new_nums
 
 **电话号码**
 用group={'2':'abc',}这个字典把对应关系都存储下来，然后也是从result去取出元素，同时tmp去取出group[i]的元素，这里是不保留旧组合，因此使用result=tmp

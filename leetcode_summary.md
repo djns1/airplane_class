@@ -72,7 +72,7 @@ prerequisitesd的子数组只会有两个,根据prerequisitesd得到邻表(学�
 用group={'2':'abc',}这个字典把对应关系都存储下来，然后也是从result去取出元素，同时tmp去取出group[i]的元素，这里是不保留旧组合，因此使用result=tmp
 
 **组合总和  candidates = [2,3,6,7], target = 7 输出 [ [2,2,3],[7]]**
-要用dfs(start,path,remain)去做,start代表从哪个下标开始选择数字，path代表当前已经选择的数字，remain代表距离目标值还差多少，for i in range(start,len(candidate))在这个循环更新new_path，dfs(i,new_path,remain-candidate[i])
+要用dfs(start,path,remain)去做,start代表从哪个下标开始选择数字，path代表当前已经选择的数字--path是列表，remain代表距离目标值还差多少，for i in range(start,len(candidate))在这个循环更新new_path，dfs(i,new_path,remain-candidate[i])
 
 **括号生成**
 用dfs(path,left,right)去做,path代表当前已经生成的括号字符串,left代表已经使用的左括号数量,right代表已经使用的右括号的数量,if left< n,dfs(path+'(',left+1,right)和if right< left dfs(path+')',left,right+1)去做回溯

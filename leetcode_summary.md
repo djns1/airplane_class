@@ -81,7 +81,7 @@ prerequisitesd的子数组只会有两个,根据prerequisitesd得到邻表(学�
 用dfs的思想去做,dfs(i,j,k)中i代表当前行,j代表当前列,k代表要找word中的第几个字符.然后在dfs中要写i,j的范围约束,错误的话就返回False,然后要写borad【i][j]!=word[k]不对就要返回False.然后当k== len(word)-1的时候就返回True.要把当前用到的board值存下来,并且把当前的board标记为#(代表已经用了)再使用found去进行四个位置的搜索or来连接。然后取出board的值继续在返回整个函数的found
 
 **分割回文串**
-用path== path[::-1]去判断，采用dfs(remain,origin)去做这里的remain是已经切好、并且确定是回文串的部分,origin是还没有切割、接下来需要处理的字符串.if not origin就result.append(remain)然后返回,for循环是对origin进行切片所以是(1,len(origin)+1)，然后path=origin(:i)然后在回文串的判断里面去进行内部dfs需要去更新remain和origin
+用path== path[::-1]去判断--path代表当前这一刀切出来的字符串，采用dfs(remain,origin)去做这里的remain是已经切好、并且确定是回文串的部分,origin是还没有切割、接下来需要处理的字符串.if not origin就result.append(remain)然后返回,for循环是对origin进行切片所以是(1,len(origin)+1)，然后path=origin(:i)然后在回文串的判断里面去进行内部dfs需要去更新remain和origin
 
 **乘积最大子数组**
 用cur_max和cur_min去记录每次的最大值和最小值，cur_max = max(cur_max * num,num)，cur_min同理去更新值，当遇到负数的时候最大值和最小值会交换(大变小，小变大)

@@ -93,7 +93,7 @@ prerequisitesd的子数组只会有两个,根据prerequisitesd得到邻表(学�
 依旧是二分的思想，但是需要判断mid的左边还是右边有序,if nums[left]< nums[mid]然后看**这个target是否在这个有序的范围之内,if nums[left] <= target< nums[mid]那就取左侧right=mid-1反之取右侧**，如果是右边有序依旧先看是否在这个范围之内if nums[mid]< target <=nums[right]如果在就取右侧left=mid+1反之取左侧  有目标值的二分的while都是<=不是<
 
 **搜索旋转排序数组中的最小值**
-也是二分的思想，如果nums[mid]>nums[right]就代表右侧会有最小值，这个时候left=mid+1,如果不是的话最小值就在左侧,right=mid他会一个一个去搜索的不用mid-1的原因是可能mid会取到最小值。这里是找值所以while用<没有等号
+也是二分的思想，如果nums[mid]>nums[right]就代表右侧会有最小值，这个时候left=mid+1,如果不是的话最小值就在左侧,right=mid他会一个一个去搜索的不用mid-1的原因是可能mid会取到最小值。这里是找值所以while用<没有等号  **这里不是一层一层比较得到的最小值，而是通过不断排除错误答案，最后只剩下正确答案**
 
 **字符串解码**  ---有点理解不了
 当遇到数字isdigit的时候cur_num=cur_num* 10+ch 当遇到‘【'的时候需要用stack存储之前的(cur_str,cur_num)---数字是这次的，str是上次的，然后这两个要重置，当取到'】'的时候取出之前的stack.pop()然后cur_str=pre+cur_str* num--顺序不能变，在就是如果是字符就更新cur_str+=ch

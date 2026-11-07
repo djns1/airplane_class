@@ -90,7 +90,7 @@ prerequisitesd的子数组只会有两个,根据prerequisitesd得到邻表(学�
 复杂度是o(log(n))采用二分法，这里要返回两个位置，所以需要两次二分，第一次找到最左侧，第二次找到最右侧，由于要保证是最左侧所以num== target还不够,还要往左找,right=mid-1,最右侧同理去更新result[1]
 
 **搜索旋转排序数组**
-依旧是二分的思想，但是需要判断mid的左边还是右边有序,if nums[left]< nums[mid]然后看这个target是否在这个有序的范围之内,if nums[left] <= target< nums[mid]那就取左侧right=mid-1反之取右侧，如果是右边有序依旧先看是否在这个范围之内if nums[mid]< target <=nums[right]如果在就取右侧left=mid+1反之取左侧  有目标值的二分的while都是<=不是<
+依旧是二分的思想，但是需要判断mid的左边还是右边有序,if nums[left]< nums[mid]然后看**这个target是否在这个有序的范围之内,if nums[left] <= target< nums[mid]那就取左侧right=mid-1反之取右侧**，如果是右边有序依旧先看是否在这个范围之内if nums[mid]< target <=nums[right]如果在就取右侧left=mid+1反之取左侧  有目标值的二分的while都是<=不是<
 
 **搜索旋转排序数组中的最小值**
 也是二分的思想，如果nums[mid]>nums[right]就代表右侧会有最小值，这个时候left=mid+1,如果不是的话最小值就在左侧,right=mid他会一个一个去搜索的不用mid-1的原因是可能mid会取到最小值。这里是找值所以while用<没有等号
